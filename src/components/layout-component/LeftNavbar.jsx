@@ -17,11 +17,15 @@ const LeftNavbar = () => {
   return <div>
     <h2 className="font-semibold mb-2">All Caterogy ({categories.length})</h2>
     <div className="flex flex-col gap-2">
-      {
-        categories.map(category => <NavLink to={`/category/${category.category_id}`} className="btn" key={category.category_id}>
-          {category.category_name}
-        </NavLink>)
-      }
+    {categories.map((category) => (
+          <NavLink
+            to={`/category/${category.category_id}`}
+            className="btn bg-base-100 border-none"
+            key={category.category_id}
+          >
+            {category.category_name}
+          </NavLink>
+        ))}
     </div>
   </div>;
 };
