@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from './../firebase/firenase.config';
 
@@ -27,6 +27,10 @@ const AuthProvider = ({ children }) => {
     return signOut(auth)
   }
 
+  const updateUserProfile =(updateddata)=>{
+          return updateProfile(auth.currentUser, updateddata)
+  } 
+
 
   const authInfo = {
     user,
@@ -34,7 +38,8 @@ const AuthProvider = ({ children }) => {
     createNewUser,
     logOut,
     userLogIn,
-    loading
+    loading,
+    updateUserProfile
   };
 
   useEffect(()=>{
