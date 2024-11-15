@@ -11,7 +11,7 @@ const NewsCard = (props = {}) => {
         <img
           src={news.author.img}
           alt={news.author.name}
-          className="w-10 h-10 rounded-full mr-3"
+          className="w-10 h-10 rounded-full mr-3" 
         />
         <div>
           <p className="font-semibold">{news.author.name}</p>
